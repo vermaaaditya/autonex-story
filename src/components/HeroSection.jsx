@@ -1,25 +1,22 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronDown, Cpu, Zap, Terminal, Sparkles } from 'lucide-react';
+import { ChevronDown, Cpu, Sparkles, Terminal, ArrowUpRight } from 'lucide-react';
 
 export default function HeroSection({ onOpenJoin }) {
   const { scrollY } = useScroll();
   
-  // Parallax transform multipliers
-  const bgY = useTransform(scrollY, [0, 800], [0, 200]);
-  const textY = useTransform(scrollY, [0, 800], [0, 90]);
-  const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const textY = useTransform(scrollY, [0, 600], [0, 80]);
+  const opacity = useTransform(scrollY, [0, 450], [1, 0]);
+
+  // Staggered word animations
+  const words = ["ZERO", "TO", "CIRCUIT"];
 
   return (
-    <section id="hero" className="relative min-h-[92vh] flex flex-col justify-center items-center px-4 overflow-hidden py-16">
+    <section id="hero" className="relative min-h-[90vh] flex flex-col justify-center items-center px-4 overflow-hidden py-16 bg-grid-minimal">
       
-      {/* Parallax Background Glowing Orbs */}
-      <motion.div 
-        style={{ y: bgY }} 
-        className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gradient-to-tr from-[#00D4FF]/15 via-[#FF5A1F]/15 to-transparent blur-[120px] pointer-events-none" 
-      />
+      {/* Ambient Gradient Glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-indigo-600/15 via-cyan-500/10 to-transparent blur-[140px] pointer-events-none rounded-full" />
 
-      {/* Main Container */}
       <motion.div 
         style={{ y: textY, opacity }} 
         className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 my-auto"
@@ -30,40 +27,42 @@ export default function HeroSection({ onOpenJoin }) {
           
           {/* Pill Badge */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ filter: "blur(8px)", opacity: 0, y: 15 }}
+            animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#00D4FF]/10 border border-[#00D4FF]/40 text-[#00D4FF] font-mono-code text-xs w-fit mb-6 shadow-[0_0_12px_rgba(0,212,255,0.3)]"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-cyan-400 font-mono-code text-xs w-fit mb-6 shadow-sm"
           >
-            <span className="w-2 h-2 rounded-full bg-[#00FF88] animate-ping" />
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
             <span>1ST EVER ROBOTICS GUILD AT SIET PANCHKULA</span>
           </motion.div>
 
-          {/* Main Title: Zero to Circuit */}
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="font-display text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-6 uppercase text-white"
-          >
-            ZERO TO <br />
-            <span className="text-orange-gradient drop-shadow-[0_0_35px_rgba(255,90,31,0.5)]">
-              CIRCUIT
-            </span>
-          </motion.h1>
+          {/* Staggered Blur-Fade Title */}
+          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-6 uppercase text-white">
+            {words.map((word, idx) => (
+              <motion.span
+                key={idx}
+                initial={{ filter: "blur(12px)", opacity: 0, y: 24 }}
+                animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
+                transition={{ duration: 0.7, delay: idx * 0.12 }}
+                className={`inline-block mr-4 ${idx === 2 ? 'text-gradient-accent drop-shadow-[0_0_35px_rgba(99,102,241,0.4)]' : ''}`}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </h1>
 
           {/* Subtitle Paragraph */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ filter: "blur(8px)", opacity: 0, y: 15 }}
+            animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed mb-8 font-body"
+            className="text-zinc-400 text-base sm:text-lg max-w-xl leading-relaxed mb-8 font-sans font-medium"
           >
-            The origin journey of AUTONEX — from zero hardware culture at campus to a thriving 
-            guild of <strong className="text-[#00D4FF]">Autonomous Robotics</strong>, <strong className="text-[#00FF88]">Industrial Automation</strong> & <strong className="text-[#FF5A1F]">Embedded Systems</strong>.
+            The origin story of AUTONEX — building campus hardware culture from zero into a thriving 
+            community of <strong className="text-white">Autonomous Robotics</strong>, <strong className="text-white">Industrial Automation</strong> & <strong className="text-white">Embedded Systems</strong>.
           </motion.p>
 
-          {/* CTA Buttons */}
+          {/* Action Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,64 +71,63 @@ export default function HeroSection({ onOpenJoin }) {
           >
             <button
               onClick={onOpenJoin}
-              className="px-8 py-4 rounded-full bg-gradient-to-r from-[#FF5A1F] via-[#FFB800] to-[#00D4FF] text-black font-display font-black text-sm uppercase tracking-wider shadow-[0_0_30px_rgba(255,90,31,0.6)] hover:scale-105 transition-transform flex items-center gap-2"
+              className="px-7 py-3.5 rounded-full bg-white text-black font-sans font-bold text-sm hover:bg-zinc-200 shadow-[0_0_25px_rgba(255,255,255,0.2)] hover:scale-105 transition-all flex items-center gap-2"
             >
-              <Zap className="w-5 h-5 text-black fill-current" />
-              JOIN THE GUILD
+              <span>Join AUTONEX</span>
+              <ArrowUpRight className="w-4 h-4" />
             </button>
 
             <a
               href="#problem"
-              className="px-8 py-4 rounded-full bg-[#12121A] border border-white/20 text-white font-mono-code text-xs font-bold uppercase tracking-wider hover:border-[#00D4FF] hover:text-[#00D4FF] transition-colors"
+              className="px-7 py-3.5 rounded-full bg-white/[0.05] border border-white/10 text-zinc-300 font-mono-code text-xs font-semibold hover:border-white/30 hover:text-white transition-colors"
             >
-              READ OUR JOURNEY ➔
+              Explore Narrative ➔
             </a>
           </motion.div>
 
         </div>
 
-        {/* Right Column: Code Terminal Graphic */}
+        {/* Right Column: Sleek Bento Code Block */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, x: 30 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          initial={{ filter: "blur(12px)", opacity: 0, scale: 0.92 }}
+          animate={{ filter: "blur(0px)", opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
           className="lg:col-span-5 relative"
         >
-          <div className="autonex-card rounded-2xl p-5 border-2 border-[#00D4FF]/40 relative shadow-2xl overflow-hidden">
-            {/* Terminal Header */}
-            <div className="flex items-center justify-between border-b border-slate-700/60 pb-3 mb-4">
+          <div className="bento-card rounded-2xl p-6 relative border-glow-indigo overflow-hidden">
+            {/* Window Bar */}
+            <div className="flex items-center justify-between border-b border-white/10 pb-3.5 mb-4">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <div className="w-3 h-3 rounded-full bg-green-500" />
-                <span className="font-mono-code text-xs text-slate-400 ml-2">autonex_robotics.py</span>
+                <div className="w-2.5 h-2.5 rounded-full bg-zinc-600" />
+                <div className="w-2.5 h-2.5 rounded-full bg-zinc-600" />
+                <div className="w-2.5 h-2.5 rounded-full bg-zinc-600" />
+                <span className="font-mono-code text-xs text-zinc-400 ml-2">autonex_robotics.py</span>
               </div>
-              <Terminal className="w-4 h-4 text-[#00D4FF]" />
+              <Terminal className="w-4 h-4 text-indigo-400" />
             </div>
 
-            {/* Terminal Content */}
-            <div className="font-mono-code text-xs leading-relaxed space-y-2 text-slate-300">
-              <div className="text-emerald-400"># SIET Panchkula 1st Ever Robotics Club</div>
-              <div><span className="text-cyan-400">import</span> <span className="text-purple-300">autonex</span> <span className="text-cyan-400">as</span> <span className="text-white">ax</span></div>
-              <div className="pt-2"><span className="text-yellow-300">club</span> = ax.RoboticsGuild(<span className="text-emerald-300">"AUTONEX"</span>)</div>
+            {/* Code Body */}
+            <div className="font-mono-code text-xs leading-relaxed space-y-2 text-zinc-300">
+              <div className="text-zinc-500"># SIET Panchkula 1st Ever Robotics Club</div>
+              <div><span className="text-cyan-400">import</span> <span className="text-indigo-300">autonex</span> <span className="text-cyan-400">as</span> <span className="text-white">ax</span></div>
+              <div className="pt-2"><span className="text-amber-300">club</span> = ax.RoboticsGuild(<span className="text-emerald-300">"AUTONEX"</span>)</div>
               <div>club.add_domain(<span className="text-emerald-300">"Autonomous Robotics"</span>)</div>
               <div>club.add_domain(<span className="text-emerald-300">"Industrial Automation"</span>)</div>
               <div>club.add_domain(<span className="text-emerald-300">"Embedded Systems & IoT"</span>)</div>
-              <div className="pt-2 text-amber-400">▶ club.run()</div>
-              <div className="text-emerald-400 font-bold">✓ Status: ACTIVE BUILDERS (40+)</div>
-              <div className="text-emerald-400 font-bold">✓ Hardware Labs: ONLINE</div>
-              <div className="text-cyan-400 font-bold">✓ Innovation: PIONEERING</div>
+              <div className="pt-2 text-indigo-400">▶ club.run()</div>
+              <div className="text-emerald-400 font-semibold">✓ Status: ACTIVE BUILDERS (40+)</div>
+              <div className="text-emerald-400 font-semibold">✓ Hardware Labs: ONLINE</div>
             </div>
 
-            {/* Floating Domain Badges */}
-            <div className="mt-4 pt-3 border-t border-slate-800 flex flex-wrap gap-2">
-              <span className="px-2.5 py-1 rounded-md bg-[#00D4FF]/10 text-[#00D4FF] font-mono-code text-[11px] border border-[#00D4FF]/30">
+            {/* Domain Badges */}
+            <div className="mt-5 pt-3.5 border-t border-white/10 flex flex-wrap gap-2">
+              <span className="px-2.5 py-1 rounded-md bg-white/[0.05] text-cyan-400 font-mono-code text-[11px] border border-white/10">
                 🤖 Autonomous ROS
               </span>
-              <span className="px-2.5 py-1 rounded-md bg-[#00FF88]/10 text-[#00FF88] font-mono-code text-[11px] border border-[#00FF88]/30">
+              <span className="px-2.5 py-1 rounded-md bg-white/[0.05] text-indigo-400 font-mono-code text-[11px] border border-white/10">
                 ⚙️ Industrial PLC
               </span>
-              <span className="px-2.5 py-1 rounded-md bg-[#FF5A1F]/10 text-[#FF5A1F] font-mono-code text-[11px] border border-[#FF5A1F]/30">
+              <span className="px-2.5 py-1 rounded-md bg-white/[0.05] text-emerald-400 font-mono-code text-[11px] border border-white/10">
                 🔌 ESP32 / STM32
               </span>
             </div>
@@ -138,16 +136,16 @@ export default function HeroSection({ onOpenJoin }) {
 
       </motion.div>
 
-      {/* Scroll Down Indicator */}
+      {/* Scroll Indicator */}
       <motion.a
         href="#problem"
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1, y: [0, 8, 0] }}
+        animate={{ opacity: 1, y: [0, 6, 0] }}
         transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-        className="absolute bottom-6 flex flex-col items-center gap-1 font-mono-code text-xs text-slate-400 hover:text-[#00D4FF] transition-colors"
+        className="absolute bottom-6 flex flex-col items-center gap-1 font-mono-code text-xs text-zinc-500 hover:text-white transition-colors"
       >
-        <span>SCROLL TO EXPLORE</span>
-        <ChevronDown className="w-4 h-4 text-[#FF5A1F]" />
+        <span>SCROLL DOWN</span>
+        <ChevronDown className="w-4 h-4 text-indigo-400" />
       </motion.a>
 
     </section>

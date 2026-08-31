@@ -1,96 +1,102 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@700;800;900&family=Space+Grotesk:wght@600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --bg-dark: #09021A;
-  --bg-navy: #0A0E27;
-  --cyan-accent: #00D4FF;
-  --neon-green: #00FF88;
-  --electric-orange: #FF5A1F;
-  --gold-accent: #FFB800;
+  --bg-pure: #030305;
+  --bg-surface: #0A0A0F;
+  --bg-card: rgba(18, 18, 26, 0.65);
+  
+  --accent-cyan: #06B6D4;
+  --accent-indigo: #6366F1;
+  --accent-violet: #8B5CF6;
+  --accent-[#FF5A1F]: #EC4899;
 
-  --font-display: 'Orbitron', 'Space Grotesk', sans-serif;
-  --font-headline: 'Space Grotesk', 'Syne', sans-serif;
-  --font-mono: 'Space Mono', monospace;
-  --font-body: 'Inter', sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 body {
-  background-color: var(--bg-dark);
-  color: #F0F4FF;
-  font-family: var(--font-body);
+  background-color: var(--bg-pure);
+  color: #F4F4F5;
+  font-family: var(--font-sans);
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
 }
 
-/* Font Classes */
+/* Typography Classes */
 .font-display {
   font-family: var(--font-display);
 }
 .font-mono-code {
   font-family: var(--font-mono);
 }
-.font-headline {
-  font-family: var(--font-headline);
-}
 
-/* Gradient Text Utilities */
-.text-cyan-gradient {
-  background: linear-gradient(135deg, #00D4FF 0%, #00FF88 50%, #FF5A1F 100%);
+/* Modern Gradient Text Effects */
+.text-gradient-minimal {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E4E4E7 40%, #A1A1AA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-orange-gradient {
-  background: linear-gradient(135deg, #FF5A1F 0%, #FFB800 50%, #00D4FF 100%);
+.text-gradient-accent {
+  background: linear-gradient(135deg, #38BDF8 0%, #818CF8 50%, #C084FC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-silver-gradient {
-  background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 40%, #94A3B8 100%);
+.text-gradient-fire {
+  background: linear-gradient(135deg, #F97316 0%, #FB923C 50%, #FACC15 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Glassmorphism & Panel Styling */
-.autonex-card {
-  background: rgba(18, 14, 39, 0.75);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(0, 212, 255, 0.25);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+/* Modern Glassmorphic Bento Cards */
+.bento-card {
+  background: rgba(15, 15, 23, 0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.autonex-card-orange {
-  background: rgba(26, 11, 30, 0.85);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 90, 31, 0.35);
-  box-shadow: 0 20px 60px rgba(255, 90, 31, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+.bento-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
 }
 
-/* Glow Shadows */
-.glow-cyan {
-  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+/* Glowing Border Accent */
+.border-glow-indigo {
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  box-shadow: 0 0 25px rgba(99, 102, 241, 0.25);
 }
-.glow-orange {
-  box-shadow: 0 0 30px rgba(255, 90, 31, 0.4);
+
+/* Spotlight Radial Radial Overlay */
+.bg-radial-spotlight {
+  background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(99, 102, 241, 0.12), transparent 40%);
 }
-.glow-green {
-  box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+
+/* Minimal Grid Texture */
+.bg-grid-minimal {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #09021A;
+  background: #030305;
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00D4FF, #FF5A1F);
-  border-radius: 4px;
+  background: #27272A;
+  border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #FF5A1F, #00FF88);
+  background: #6366F1;
 }
