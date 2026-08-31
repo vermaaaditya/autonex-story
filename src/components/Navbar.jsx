@@ -3,8 +3,8 @@ import { Cpu, ArrowUpRight } from 'lucide-react';
 
 export default function Navbar({ onOpenJoin }) {
   return (
-    <header className="sticky top-4 z-40 w-full max-w-5xl mx-auto px-4">
-      <div className="rounded-full backdrop-blur-xl bg-[#0A0A0F]/85 border border-white/10 p-2 pl-5 pr-3 flex items-center justify-between shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-full max-w-5xl px-4">
+      <div className="rounded-full backdrop-blur-xl bg-[#0A0A0F]/85 border border-white/10 p-2 pl-5 pr-3 flex items-center justify-between shadow-[0_10px_35px_rgba(0,0,0,0.7)]">
         
         {/* Brand */}
         <a href="#hero" className="flex items-center gap-2.5 group">
@@ -28,8 +28,8 @@ export default function Navbar({ onOpenJoin }) {
           <a href="#hero" className="hover:text-white transition-colors">00. Home</a>
           <a href="#problem" className="hover:text-white transition-colors">01. Origin</a>
           <a href="#founders" className="hover:text-white transition-colors">02. Founders</a>
-          <a href="#event" className="hover:text-white transition-colors">03. RoboWars</a>
-          <a href="#present" className="hover:text-white transition-colors">04. Status</a>
+          <a href="#aibot" className="hover:text-white transition-colors">03. AI Bot</a>
+          <a href="#event" className="hover:text-white transition-colors">04. NeXus</a>
         </nav>
 
         {/* Action Button */}
