@@ -7,7 +7,7 @@ export default function AutonexAiBot() {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: 'BEEP BOOP! 🤖 I am the AUTONEX Cyber-Bot! Ask me anything about President Aaditya Verma, Vice President Rishabh Kumar, Coordinator Sandeep Sharma, R&D Head Heemanshu, or our 3 technical domains!'
+      content: 'BEEP BOOP! 🤖 I am the AUTONEX Cyber-Bot! Ask me about President Aaditya Verma, VP Rishabh Kumar, Coordinator Sandeep Sharma, R&D Head Heemanshu, or the NeXus Design Challenge!'
     }
   ]);
   const [input, setInput] = useState('');
@@ -47,7 +47,7 @@ export default function AutonexAiBot() {
         ...newMessages,
         {
           role: 'assistant',
-          content: 'Signal error! But I can tell you that Aaditya Verma is President, Rishabh Kumar is VP, Sandeep Sharma is Coordinator, and Heemanshu is R&D Head!'
+          content: 'Signal error! Aaditya Verma is President, Rishabh Kumar is VP, Sandeep Sharma is Coordinator, and Heemanshu is R&D Head!'
         }
       ]);
     } finally {
@@ -58,8 +58,8 @@ export default function AutonexAiBot() {
   const quickPrompts = [
     "Who are the founders?",
     "What are the 3 domains?",
-    "Tell me about Dr. Milap Sharma",
-    "How to join AUTONEX?"
+    "What is NeXus Design Challenge?",
+    "Tell me about Dr. Milap Sharma"
   ];
 
   return (
@@ -116,7 +116,7 @@ export default function AutonexAiBot() {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent animate-pulse" />
                 </div>
 
-                {/* Mouth / Speaker Grille (Connecting Tail Target) */}
+                {/* Mouth / Speaker Grille */}
                 <div id="robo-mouth" className="w-24 h-6 bg-zinc-900 border border-cyan-400/40 rounded-xl flex items-center justify-center gap-1">
                   <span className={`w-1.5 h-3 rounded-full bg-cyan-400 ${isLoading ? 'animate-bounce' : 'animate-pulse'}`} />
                   <span className={`w-1.5 h-4 rounded-full bg-indigo-400 ${isLoading ? 'animate-bounce delay-100' : 'animate-pulse'}`} />
@@ -145,7 +145,7 @@ export default function AutonexAiBot() {
           {/* Right Column: Floating Speech Bubble right next to Robo's mouth */}
           <div className="lg:col-span-8 relative">
             
-            {/* Speech Bubble Tail SVG pointing to the left mouth */}
+            {/* Speech Bubble Tail SVG */}
             <div className="hidden lg:block absolute -left-4 top-16 w-0 h-0 border-t-[12px] border-t-transparent border-r-[16px] border-r-indigo-500 border-b-[12px] border-b-transparent z-30" />
 
             <div className="bento-card rounded-3xl p-6 sm:p-8 relative border-2 border-indigo-500/40 shadow-[0_0_50px_rgba(99,102,241,0.2)] flex flex-col h-[520px]">
@@ -232,7 +232,7 @@ export default function AutonexAiBot() {
                   type="text"
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  placeholder="Ask about Aaditya, Rishabh, Sandeep, Heemanshu, or AUTONEX..."
+                  placeholder="Ask about Aaditya, Rishabh, Sandeep, Heemanshu, NeXus Challenge..."
                   className="flex-1 bg-[#050508] border border-white/15 rounded-xl px-4 py-3 text-white text-xs sm:text-sm font-sans focus:outline-none focus:border-cyan-400"
                 />
                 <button

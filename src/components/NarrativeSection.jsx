@@ -10,11 +10,11 @@ export default function NarrativeSection({ onOpenJoin }) {
       tag: 'THE VOID',
       title: '0 CLUBS ➔ 1 MOVEMENT',
       subtitle: 'The Campus Before AUTONEX',
-      content: 'When SIET Panchkula was established, students passionate about hardware faced a blank canvas: zero robotics clubs, zero automation labs, and no platform to build real physical machines.',
+      content: 'When SIET Panchkula was established, students passionate about hardware faced a blank canvas: zero robotics clubs, zero automation labs, and no official platform for engineering projects.',
       stat: '0 CLUBS',
       statLabel: 'Hardware Culture Before AUTONEX',
       badgeColor: '#06B6D4',
-      quote: 'Zero hardware labs. Zero robotics contests. Until we sketched the first schematic.',
+      quote: 'Zero hardware labs. Zero technical contests. Until we laid the first foundation.',
       align: 'left',
       icon: ShieldAlert,
       bullets: [
@@ -27,76 +27,76 @@ export default function NarrativeSection({ onOpenJoin }) {
       id: 'spark',
       number: '02',
       tag: 'THE SPARK',
-      title: 'THE MIDNIGHT IDEA',
-      subtitle: '4 Student Engineers & 1 Mentor',
-      content: 'Late one evening in a hostel room, 4 guys — Sandeep, Narinder, Anuj & Aaditya — decided to end the void. Supported by Dr. Milap Sharma (Assistant Professor, Dept of Automation & Robotics), they drafted the constitution for SIET Panchkula’s inaugural technical guild.',
-      stat: '4 GUYS',
-      statLabel: 'Founders Who Started The Guild',
+      title: 'THE INITIAL BLUEPRINT',
+      subtitle: '4 Student Founders & 1 Mentor',
+      content: 'Recognizing the need for a hands-on technical community, 4 founding student leaders — President Aaditya Verma, Vice President Rishabh Kumar, Coordinator Sandeep Sharma, and R&D Head Heemanshu — came together to establish SIET Panchkula’s 1st official robotics guild under the guidance of Dr. Milap Sharma.',
+      stat: '4 FOUNDERS',
+      statLabel: 'Student Leadership Board',
       badgeColor: '#6366F1',
-      quote: 'A blueprint born out of necessity to unite programmers, mechanics, and circuit designers.',
+      quote: 'A framework built to unite programmers, hardware builders, and control systems engineers.',
       align: 'right',
       icon: Lightbulb,
       bullets: [
         'Architected 3 core technical domains',
-        'Secured faculty mentorship & departmental backing',
-        'Drafted the official AUTONEX constitution'
+        'Secured faculty mentorship from Dr. Milap Sharma',
+        'Established SIET Panchkula’s inaugural club constitution'
       ]
     },
     {
       id: 'build',
       number: '03',
       tag: 'THE BUILD',
-      title: 'SETTING UP THE LABS',
-      subtitle: '50+ Members Joined in 21 Days',
-      content: 'Word spread rapidly across lecture halls. Within three weeks of launch, over 50 enthusiastic engineers joined AUTONEX. We converted a dedicated lab space into our active hardware workshop — soldering boards, running ROS scripts, and wiring PLCs.',
-      stat: '50+ MEMBERS',
-      statLabel: 'Joined in First 3 Weeks',
+      title: 'BUILDING THE COMMUNITY',
+      subtitle: '40+ Active Members & Workshops',
+      content: 'Word spread rapidly across lecture halls. Students from across departments joined AUTONEX, creating an active community operating across Autonomous Robotics, Industrial Automation, and Embedded IoT.',
+      stat: '40+ MEMBERS',
+      statLabel: 'Active Student Builders',
       badgeColor: '#10B981',
-      quote: 'From solo hobbyists to an organized technical powerhouse operating 7 days a week.',
+      quote: 'From isolated hobbyists to an organized technical guild on campus.',
       align: 'left',
       icon: Users,
       bullets: [
-        'Established hands-on hardware workstations',
-        'Formed dedicated domain leadership leads',
+        'Established hands-on hardware learning tracks',
+        'Formed specialized domain leadership squads',
         'Procured ESP32, STM32 & PLC training kits'
       ]
     },
     {
       id: 'event',
       number: '04',
-      tag: 'THE FIRST EVENT',
-      title: 'ROBOWARS & HEAVY METAL',
-      subtitle: '120+ Participants, 24 Robot Submissions',
-      content: 'We organized SIET Panchkula’s inaugural RoboWars & Industrial Automation Challenge. 120+ student competitors packed the auditorium, showcasing custom line-following bots, pneumatic arms, and autonomous rovers.',
-      stat: '24 BOTS',
-      statLabel: 'Submitted in Inaugural Contest',
+      tag: 'THE EVENTS',
+      title: 'NEXUS DESIGN CHALLENGE & QUIZ',
+      subtitle: 'Flagship Campus Competitions',
+      content: 'AUTONEX launched its flagship initiatives: the NeXus Design Challenge focusing on hardware CAD & control design, along with the Robotics & Automation Quiz to test engineering fundamentals across campus.',
+      stat: 'NEXUS & QUIZ',
+      statLabel: 'Flagship Campus Initiatives',
       badgeColor: '#F59E0B',
-      quote: 'The moment campus recognized that AUTONEX was not just a club, but a technology movement.',
+      quote: 'Inspiring student creativity through the NeXus Design Challenge and Robotics Quiz.',
       align: 'right',
       icon: Rocket,
       bullets: [
-        'Inaugural campus-wide RoboWars arena',
-        '120+ active student participants',
-        'First prize awarded by Department Chairman'
+        'NeXus Design Challenge for CAD & 3D control design',
+        'Campus-wide Robotics & Automation Quiz',
+        'Student workshops & technical knowledge sessions'
       ]
     },
     {
       id: 'present',
       number: '05',
       tag: 'PRESENT DAY',
-      title: '40+ ACTIVE BUILDERS & 9+ EVENTS',
-      subtitle: 'Pioneering & Thriving at SIET Panchkula',
-      content: 'Today, AUTONEX stands as SIET Panchkula’s premiere robotics and automation guild. With 40+ active builders, 9+ major events held, and 3 specialized technical domains, we continue to engineer intelligent machines and inspire future hardware leaders.',
-      stat: '9+ EVENTS',
-      statLabel: 'Workshops & National Contests',
+      title: 'SIET PANCHKULA LEGACY',
+      subtitle: 'Pioneering & Thriving Guild',
+      content: 'Today, AUTONEX continues to thrive as SIET Panchkula’s premiere robotics and automation guild — empowering students to code algorithms, construct hardware prototypes, and lead technical initiatives.',
+      stat: '1ST CLUB',
+      statLabel: 'Historic Baseline at SIET',
       badgeColor: '#8B5CF6',
-      quote: 'Operating hardware labs, research initiatives, and national robotics delegations.',
+      quote: 'Pioneering robotics, industrial PLCs, and embedded IoT innovation.',
       align: 'left',
       icon: Trophy,
       bullets: [
         '40+ Active student members & researchers',
-        '9+ Major technical workshops & contests held',
-        '1st Official club legacy built in SIET Panchkula'
+        '3 Specialized technical domains',
+        'Inaugural technical club established in SIET history'
       ]
     }
   ];
@@ -115,7 +115,7 @@ export default function NarrativeSection({ onOpenJoin }) {
           >
             <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               
-              {/* Text Block with Blur-Fade Entrance */}
+              {/* Text Block */}
               <motion.div
                 initial={{ opacity: 0, filter: "blur(14px)", y: 35 }}
                 whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
@@ -123,7 +123,7 @@ export default function NarrativeSection({ onOpenJoin }) {
                 transition={{ duration: 0.75, ease: "easeOut" }}
                 className={`lg:col-span-7 flex flex-col ${isLeft ? 'lg:order-1 text-left' : 'lg:order-2 text-left'}`}
               >
-                {/* Chapter Tag */}
+                {/* Tag */}
                 <div className="flex items-center gap-3 mb-4">
                   <span className="font-mono-code text-xs font-semibold px-2.5 py-1 rounded bg-white/[0.05] border border-white/10 text-cyan-400">
                     CHAPTER {chap.number}
@@ -158,14 +158,14 @@ export default function NarrativeSection({ onOpenJoin }) {
                   ))}
                 </div>
 
-                {/* Quote Box */}
+                {/* Quote */}
                 <div className="p-4 rounded-xl bg-white/[0.03] border-l-2 border-indigo-500 text-xs sm:text-sm font-mono-code text-zinc-400 italic">
                   "{chap.quote}"
                 </div>
 
               </motion.div>
 
-              {/* Bento Stat Card with Blur-Fade Entrance */}
+              {/* Bento Stat Card */}
               <motion.div
                 initial={{ opacity: 0, filter: "blur(14px)", scale: 0.9, y: 30 }}
                 whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1, y: 0 }}

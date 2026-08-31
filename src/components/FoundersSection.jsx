@@ -17,7 +17,7 @@ export default function FoundersSection() {
       name: "Rishabh Kumar",
       role: "Vice President",
       dept: "Co-Founder",
-      desc: "Co-architected club operations, team structures, and hardware lab infrastructure.",
+      desc: "Co-architected club operations, team structures, and hardware learning frameworks.",
       badge: "Vice President",
       icon: Shield,
       color: "#6366F1"
@@ -26,7 +26,7 @@ export default function FoundersSection() {
       name: "Sandeep Sharma",
       role: "Coordinator",
       dept: "Operations & Management",
-      desc: "Coordinates campus events, department collaborations, and active builder workflows.",
+      desc: "Coordinates campus initiatives, NeXus Design Challenge, and builder workflows.",
       badge: "Coordinator",
       icon: UserCheck,
       color: "#06B6D4"
@@ -57,8 +57,8 @@ export default function FoundersSection() {
     },
     {
       title: "Events & Operations",
-      desc: "Planning, stage coordination, RoboWars logistics, technical hackathons, and showcases.",
-      tech: ["Event Ops", "RoboWars Arena", "Logistics", "Stage Coordination"],
+      desc: "Organizing NeXus Design Challenge, Robotics & Automation Quizzes, and workshops.",
+      tech: ["NeXus Challenge", "Robotics Quiz", "Logistics", "Operations"],
       lead: "Sandeep Sharma"
     },
     {
@@ -73,7 +73,7 @@ export default function FoundersSection() {
     <section id="founders" className="py-24 px-4 relative z-10 bg-grid-minimal scroll-mt-16">
       <div className="max-w-6xl mx-auto w-full">
         
-        {/* Section Header */}
+        {/* Header */}
         <motion.div 
           initial={{ opacity: 0, filter: "blur(12px)", y: 30 }}
           whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
@@ -93,7 +93,7 @@ export default function FoundersSection() {
           </p>
         </motion.div>
 
-        {/* 4 Founders Cards Grid */}
+        {/* 4 Founders Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {founders.map((f, idx) => {
             const IconComp = f.icon;
@@ -137,7 +137,7 @@ export default function FoundersSection() {
           })}
         </div>
 
-        {/* Faculty Mentor Spotlight Card */}
+        {/* Faculty Mentor Spotlight */}
         <motion.div
           initial={{ opacity: 0, filter: "blur(14px)", y: 30 }}
           whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
@@ -146,14 +146,12 @@ export default function FoundersSection() {
           className="bento-card rounded-3xl p-8 sm:p-10 relative border-glow-indigo mb-20 overflow-hidden"
         >
           <div className="flex flex-col lg:flex-row items-center gap-8">
-            {/* Avatar Circle */}
             <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full bg-gradient-to-tr from-cyan-500 to-indigo-600 p-[3px] shrink-0 shadow-xl">
               <div className="w-full h-full bg-[#050508] rounded-full flex items-center justify-center font-display text-3xl sm:text-4xl font-black text-white">
                 MS
               </div>
             </div>
 
-            {/* Content */}
             <div className="flex-1 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-indigo-400 font-mono-code text-xs mb-3">
                 <GraduationCap className="w-4 h-4" />
@@ -181,7 +179,7 @@ export default function FoundersSection() {
           </div>
         </motion.div>
 
-        {/* Specialized Squads Grid */}
+        {/* Squads */}
         <div className="mt-12">
           <motion.div 
             initial={{ opacity: 0, filter: "blur(10px)" }}
