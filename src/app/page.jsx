@@ -4,15 +4,16 @@ import dynamic from 'next/dynamic';
 import Navbar from '@/components/Navbar';
 import HeroSection from '@/components/HeroSection';
 
-// Lazy loaded below-the-fold components for lag-free instant initial render
 const DynamicNarrativeSection = dynamic(() => import('@/components/NarrativeSection'), {
-  ssr: false,
-  loading: () => <div className="min-h-[50vh] flex items-center justify-center text-zinc-500 font-mono-code text-xs">LOADING STORY ENGINE...</div>
+  ssr: false
 });
 
 const DynamicFoundersSection = dynamic(() => import('@/components/FoundersSection'), {
-  ssr: false,
-  loading: () => <div className="min-h-[40vh] flex items-center justify-center text-zinc-500 font-mono-code text-xs">LOADING TEAM ROSTER...</div>
+  ssr: false
+});
+
+const DynamicAutonexAiBot = dynamic(() => import('@/components/AutonexAiBot'), {
+  ssr: false
 });
 
 const DynamicCtaSection = dynamic(() => import('@/components/CtaSection'), {
@@ -36,16 +37,19 @@ export default function Home() {
       {/* Top Floating Navbar */}
       <Navbar onOpenJoin={() => setIsJoinOpen(true)} />
 
-      {/* Hero Section: 4 Guys, 1 Vision */}
+      {/* Hero Section */}
       <HeroSection onOpenJoin={() => setIsJoinOpen(true)} />
 
-      {/* Below-the-fold Lazy Loaded Sections */}
+      {/* Lazy Loaded Sections */}
       <Suspense fallback={null}>
-        {/* Story Narrative: The Idea, The Void, The Mentor */}
+        {/* Narrative Chapters */}
         <DynamicNarrativeSection onOpenJoin={() => setIsJoinOpen(true)} />
 
-        {/* The People Behind It: 4 Founders & Squad Roster */}
+        {/* 4 Founders Roster */}
         <DynamicFoundersSection />
+
+        {/* Groq AI Animated Robo Chatbot */}
+        <DynamicAutonexAiBot />
 
         {/* Closing CTA */}
         <DynamicCtaSection onOpenJoin={() => setIsJoinOpen(true)} />

@@ -25,7 +25,7 @@ export default function HeroSection({ onOpenJoin }) {
         {/* Left Column */}
         <div className="lg:col-span-7 flex flex-col text-left">
           
-          {/* Pill Badge with Blur-Fade */}
+          {/* Pill Badge */}
           <motion.div
             initial={{ opacity: 0, filter: "blur(10px)", y: 15 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
@@ -36,7 +36,7 @@ export default function HeroSection({ onOpenJoin }) {
             <span>HOW SIET PANCHKULA'S 1ST CLUB WAS BORN</span>
           </motion.div>
 
-          {/* Staggered Blur-Fade Title */}
+          {/* Staggered Title */}
           <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-6 uppercase text-white">
             {words.map((word, idx) => (
               <motion.span
@@ -51,14 +51,14 @@ export default function HeroSection({ onOpenJoin }) {
             ))}
           </h1>
 
-          {/* Subtitle Paragraph with Blur-Fade */}
+          {/* Subtitle Paragraph */}
           <motion.p
             initial={{ opacity: 0, filter: "blur(10px)", y: 15 }}
             animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
             className="text-zinc-300 text-base sm:text-lg max-w-xl leading-relaxed mb-8 font-sans font-medium"
           >
-            In a campus with zero hardware labs or robotics culture, four student builders teamed up with faculty mentors to build SIET Panchkula’s inaugural technical guild from scratch.
+            Led by President Aaditya Verma, Vice President Rishabh Kumar, Coordinator Sandeep Sharma, and R&D Head Heemanshu — SIET Panchkula’s inaugural robotics guild was built from scratch.
           </motion.p>
 
           {/* Action Buttons */}
@@ -107,27 +107,29 @@ export default function HeroSection({ onOpenJoin }) {
 
             {/* Code Body */}
             <div className="font-mono-code text-xs leading-relaxed space-y-2 text-zinc-300">
-              <div className="text-zinc-500"># The Founders' Initial Blueprint</div>
-              <div><span className="text-cyan-400">founders</span> = [<span className="text-emerald-300">"Sandeep"</span>, <span className="text-emerald-300">"Narinder"</span>, <span className="text-emerald-300">"Anuj"</span>, <span className="text-emerald-300">"Aaditya"</span>]</div>
-              <div><span className="text-amber-300">mentor</span> = <span className="text-emerald-300">"Dr. Milap Sharma (Ph.D. PEC)"</span></div>
-              <div className="pt-2"><span className="text-cyan-400">class</span> <span className="text-white">AutonexOrigin</span>:</div>
-              <div className="pl-4">campus = <span className="text-emerald-300">"SIET Panchkula"</span></div>
-              <div className="pl-4">status = <span className="text-emerald-300">"1st Technical Club Established"</span></div>
-              <div className="pl-4">active_builders = <span className="text-cyan-400">40</span></div>
-              <div className="pt-2 text-emerald-400 font-semibold">✓ 4 Founders • 3 Technical Domains</div>
+              <div className="text-zinc-500"># SIET Panchkula Founding Board</div>
+              <div><span className="text-cyan-400">president</span> = <span className="text-emerald-300">"Aaditya Verma"</span></div>
+              <div><span className="text-cyan-400">vice_president</span> = <span className="text-emerald-300">"Rishabh Kumar"</span></div>
+              <div><span className="text-cyan-400">coordinator</span> = <span className="text-emerald-300">"Sandeep Sharma"</span></div>
+              <div><span className="text-cyan-400">rd_head</span> = <span className="text-emerald-300">"Heemanshu"</span></div>
+              <div className="pt-2"><span className="text-amber-300">mentor</span> = <span className="text-emerald-300">"Dr. Milap Sharma (Ph.D. PEC)"</span></div>
+              <div className="pt-2 text-emerald-400 font-semibold">✓ Founding Leadership Board Online</div>
               <div className="text-emerald-400 font-semibold">✓ 40+ Active Builders Registered</div>
             </div>
 
             {/* Badges */}
             <div className="mt-5 pt-3.5 border-t border-white/10 flex flex-wrap gap-2">
-              <span className="px-2.5 py-1 rounded-md bg-white/[0.05] text-cyan-400 font-mono-code text-[11px] border border-white/10">
-                👨‍💻 Sandeep (Tech Lead)
+              <span className="px-2.5 py-1 rounded-md bg-white/[0.05] text-pink-400 font-mono-code text-[11px] border border-white/10">
+                👑 Aaditya (President)
               </span>
               <span className="px-2.5 py-1 rounded-md bg-white/[0.05] text-indigo-400 font-mono-code text-[11px] border border-white/10">
-                🎨 Narinder (Media Lead)
+                🛡️ Rishabh (Vice President)
+              </span>
+              <span className="px-2.5 py-1 rounded-md bg-white/[0.05] text-cyan-400 font-mono-code text-[11px] border border-white/10">
+                ⚡ Sandeep (Coordinator)
               </span>
               <span className="px-2.5 py-1 rounded-md bg-white/[0.05] text-emerald-400 font-mono-code text-[11px] border border-white/10">
-                ⚡ Anuj (Events Lead)
+                🔬 Heemanshu (R&D Head)
               </span>
             </div>
           </div>

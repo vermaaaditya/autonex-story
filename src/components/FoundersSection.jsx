@@ -1,44 +1,44 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Users, GraduationCap, Cpu, Code, Palette, Calendar } from 'lucide-react';
+import { Users, GraduationCap, Cpu, Code, Shield, Crown, UserCheck } from 'lucide-react';
 
 export default function FoundersSection() {
   const founders = [
     {
-      name: "Sandeep",
-      role: "Technical R&D Lead",
-      dept: "AI & ML (2nd Year)",
-      desc: "Built the core hardware, autonomous rover firmware, and ROS vision pipelines.",
-      badge: "Tech Lead",
-      icon: Code,
+      name: "Aaditya Verma",
+      role: "President",
+      dept: "Founding Architect",
+      desc: "Conceived the vision for AUTONEX and established SIET Panchkula’s 1st official robotics guild.",
+      badge: "President",
+      icon: Crown,
+      color: "#EC4899"
+    },
+    {
+      name: "Rishabh Kumar",
+      role: "Vice President",
+      dept: "Co-Founder",
+      desc: "Co-architected club operations, team structures, and hardware lab infrastructure.",
+      badge: "Vice President",
+      icon: Shield,
+      color: "#6366F1"
+    },
+    {
+      name: "Sandeep Sharma",
+      role: "Coordinator",
+      dept: "Operations & Management",
+      desc: "Coordinates campus events, department collaborations, and active builder workflows.",
+      badge: "Coordinator",
+      icon: UserCheck,
       color: "#06B6D4"
     },
     {
-      name: "Narinder",
-      role: "Media & Creative Lead",
-      dept: "AI & ML (2nd Year)",
-      desc: "Architected the visual brand, UI assets, poster designs, and video teasers.",
-      badge: "Media Lead",
-      icon: Palette,
-      color: "#8B5CF6"
-    },
-    {
-      name: "Anuj",
-      role: "Events & Operations Lead",
-      dept: "AI & ML (2nd Year)",
-      desc: "Organized SIET's first RoboWars arena and managed logistics for 120+ participants.",
-      badge: "Events Lead",
-      icon: Calendar,
+      name: "Heemanshu",
+      role: "Research & Development Head",
+      dept: "Technical & Hardware R&D",
+      desc: "Leads technical prototyping, ROS kinematics, autonomous rovers, and PLC automation rigs.",
+      badge: "R&D Head",
+      icon: Code,
       color: "#10B981"
-    },
-    {
-      name: "Aaditya Verma",
-      role: "Founding Architect & Lead",
-      dept: "Robotics & Automation",
-      desc: "Pioneered the idea of forming SIET Panchkula's first official robotics guild.",
-      badge: "Founder",
-      icon: Cpu,
-      color: "#EC4899"
     }
   ];
 
@@ -47,7 +47,7 @@ export default function FoundersSection() {
       title: "Technical & R&D Team",
       desc: "Autonomous rovers, PLC industrial automation rigs, ROS algorithms, and embedded IoT.",
       tech: ["ROS", "Python", "C++", "Embedded IoT", "PLC", "ESP32/STM32"],
-      lead: "Sandeep"
+      lead: "Heemanshu"
     },
     {
       title: "Media & Creative Team",
@@ -56,10 +56,10 @@ export default function FoundersSection() {
       lead: "Narinder"
     },
     {
-      title: "Events & Management",
+      title: "Events & Operations",
       desc: "Planning, stage coordination, RoboWars logistics, technical hackathons, and showcases.",
       tech: ["Event Ops", "RoboWars Arena", "Logistics", "Stage Coordination"],
-      lead: "Anuj"
+      lead: "Sandeep Sharma"
     },
     {
       title: "Socials & Outreach",
@@ -73,7 +73,7 @@ export default function FoundersSection() {
     <section id="founders" className="py-24 px-4 relative z-10 bg-grid-minimal scroll-mt-16">
       <div className="max-w-6xl mx-auto w-full">
         
-        {/* Section Header with Blur-Fade */}
+        {/* Section Header */}
         <motion.div 
           initial={{ opacity: 0, filter: "blur(12px)", y: 30 }}
           whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
@@ -89,11 +89,11 @@ export default function FoundersSection() {
             MEET THE <span className="text-gradient-accent">FOUNDERS</span>
           </h2>
           <p className="text-zinc-400 text-sm sm:text-base font-sans">
-            How four student builders in a quiet hostel room created SIET Panchkula’s inaugural technical guild.
+            The founding student leadership who turned an idea into SIET Panchkula’s inaugural technical guild.
           </p>
         </motion.div>
 
-        {/* 4 Founders Cards Grid with Staggered Blur-Fade */}
+        {/* 4 Founders Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {founders.map((f, idx) => {
             const IconComp = f.icon;
@@ -137,7 +137,7 @@ export default function FoundersSection() {
           })}
         </div>
 
-        {/* Faculty Mentor Spotlight Card with Blur-Fade */}
+        {/* Faculty Mentor Spotlight Card */}
         <motion.div
           initial={{ opacity: 0, filter: "blur(14px)", y: 30 }}
           whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
