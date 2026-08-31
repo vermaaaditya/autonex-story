@@ -1,58 +1,61 @@
 'use client';
 import { motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import { ChevronDown, Cpu, Terminal, ArrowUpRight, Users } from 'lucide-react';
+import { ChevronDown, Terminal, ArrowUpRight } from 'lucide-react';
 
-// Lazy load WebGL shader background to keep initial frame load lag-free
+// Lazy load WebGL shader background
 const DynamicMeshShader = dynamic(() => import('./ui/MeshDriftShader'), {
   ssr: false
 });
 
 export default function HeroSection({ onOpenJoin }) {
+  const words = ["4 GUYS.", "1 VISION.", "AUTONEX."];
+
   return (
-    <section id="hero" className="relative min-h-[90vh] flex flex-col justify-center items-center px-4 overflow-hidden py-16 bg-[#030305]">
+    <section id="hero" className="relative min-h-[92vh] flex flex-col justify-center items-center px-4 overflow-hidden py-16 bg-[#030305]">
       
-      {/* Optimized Single WebGL Shader Background */}
+      {/* WebGL Shader Backdrop */}
       <DynamicMeshShader />
 
-      {/* Ambient Spotlight */}
+      {/* Ambient Glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[450px] bg-gradient-to-tr from-indigo-600/15 via-cyan-500/10 to-transparent blur-[120px] pointer-events-none rounded-full z-10" />
 
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-20 my-auto">
         
-        {/* Left Column: Headline & Subtitle */}
+        {/* Left Column */}
         <div className="lg:col-span-7 flex flex-col text-left">
           
-          {/* Pill Badge */}
+          {/* Pill Badge with Blur-Fade */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0, filter: "blur(10px)", y: 15 }}
+            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{ duration: 0.6 }}
             className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/15 text-cyan-400 font-mono-code text-xs w-fit mb-6 backdrop-blur-md"
           >
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
             <span>HOW SIET PANCHKULA'S 1ST CLUB WAS BORN</span>
           </motion.div>
 
-          {/* Main Title */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-6 uppercase text-white"
-          >
-            4 GUYS. <br />
-            1 VISION. <br />
-            <span className="text-gradient-accent">
-              AUTONEX.
-            </span>
-          </motion.h1>
+          {/* Staggered Blur-Fade Title */}
+          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-6 uppercase text-white">
+            {words.map((word, idx) => (
+              <motion.span
+                key={idx}
+                initial={{ opacity: 0, filter: "blur(14px)", y: 24 }}
+                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                transition={{ duration: 0.7, delay: idx * 0.14 }}
+                className={`inline-block mr-4 ${idx === 2 ? 'text-gradient-accent drop-shadow-[0_0_35px_rgba(99,102,241,0.5)]' : ''}`}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </h1>
 
-          {/* Subtitle Paragraph */}
+          {/* Subtitle Paragraph with Blur-Fade */}
           <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.25 }}
+            initial={{ opacity: 0, filter: "blur(10px)", y: 15 }}
+            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{ duration: 0.7, delay: 0.45 }}
             className="text-zinc-300 text-base sm:text-lg max-w-xl leading-relaxed mb-8 font-sans font-medium"
           >
             In a campus with zero hardware labs or robotics culture, four student builders teamed up with faculty mentors to build SIET Panchkula’s inaugural technical guild from scratch.
@@ -60,9 +63,9 @@ export default function HeroSection({ onOpenJoin }) {
 
           {/* Action Buttons */}
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
+            initial={{ opacity: 0, filter: "blur(8px)", y: 15 }}
+            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
             className="flex flex-wrap items-center gap-4"
           >
             <button
@@ -85,9 +88,9 @@ export default function HeroSection({ onOpenJoin }) {
 
         {/* Right Column: Code Terminal Graphic */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
+          initial={{ opacity: 0, filter: "blur(14px)", scale: 0.94 }}
+          animate={{ opacity: 1, filter: "blur(0px)", scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.35 }}
           className="lg:col-span-5 relative"
         >
           <div className="bento-card rounded-2xl p-6 relative border-glow-indigo overflow-hidden">
@@ -115,7 +118,7 @@ export default function HeroSection({ onOpenJoin }) {
               <div className="text-emerald-400 font-semibold">✓ 40+ Active Builders Registered</div>
             </div>
 
-            {/* Roster Badges */}
+            {/* Badges */}
             <div className="mt-5 pt-3.5 border-t border-white/10 flex flex-wrap gap-2">
               <span className="px-2.5 py-1 rounded-md bg-white/[0.05] text-cyan-400 font-mono-code text-[11px] border border-white/10">
                 👨‍💻 Sandeep (Tech Lead)
@@ -132,7 +135,7 @@ export default function HeroSection({ onOpenJoin }) {
 
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll Down */}
       <motion.a
         href="#founders"
         initial={{ opacity: 0 }}

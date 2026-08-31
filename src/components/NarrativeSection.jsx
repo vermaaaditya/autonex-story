@@ -115,12 +115,12 @@ export default function NarrativeSection({ onOpenJoin }) {
           >
             <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               
-              {/* Text Block */}
+              {/* Text Block with Blur-Fade Entrance */}
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, filter: "blur(14px)", y: 35 }}
+                whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.75, ease: "easeOut" }}
                 className={`lg:col-span-7 flex flex-col ${isLeft ? 'lg:order-1 text-left' : 'lg:order-2 text-left'}`}
               >
                 {/* Chapter Tag */}
@@ -165,12 +165,12 @@ export default function NarrativeSection({ onOpenJoin }) {
 
               </motion.div>
 
-              {/* Bento Stat Card */}
+              {/* Bento Stat Card with Blur-Fade Entrance */}
               <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 25 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                initial={{ opacity: 0, filter: "blur(14px)", scale: 0.9, y: 30 }}
+                whileInView={{ opacity: 1, filter: "blur(0px)", scale: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.6, delay: 0.15 }}
+                transition={{ duration: 0.75, delay: 0.15 }}
                 className={`lg:col-span-5 ${isLeft ? 'lg:order-2' : 'lg:order-1'}`}
               >
                 <div className="bento-card rounded-2xl p-8 flex flex-col items-center text-center relative overflow-hidden">

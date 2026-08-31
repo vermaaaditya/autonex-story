@@ -1,6 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
-import { Users, GraduationCap, Cpu, Sparkles, Code, Palette, Calendar, Share2, Award } from 'lucide-react';
+import { Users, GraduationCap, Cpu, Code, Palette, Calendar } from 'lucide-react';
 
 export default function FoundersSection() {
   const founders = [
@@ -73,8 +73,14 @@ export default function FoundersSection() {
     <section id="founders" className="py-24 px-4 relative z-10 bg-grid-minimal scroll-mt-16">
       <div className="max-w-6xl mx-auto w-full">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        {/* Section Header with Blur-Fade */}
+        <motion.div 
+          initial={{ opacity: 0, filter: "blur(12px)", y: 30 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="text-center max-w-3xl mx-auto mb-16"
+        >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-cyan-400 font-mono-code text-xs mb-4">
             <Users className="w-3.5 h-3.5" />
             <span>THE PEOPLE BEHIND THE MOVEMENT</span>
@@ -85,19 +91,19 @@ export default function FoundersSection() {
           <p className="text-zinc-400 text-sm sm:text-base font-sans">
             How four student builders in a quiet hostel room created SIET Panchkula’s inaugural technical guild.
           </p>
-        </div>
+        </motion.div>
 
-        {/* 4 Founders Cards Grid */}
+        {/* 4 Founders Cards Grid with Staggered Blur-Fade */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {founders.map((f, idx) => {
             const IconComp = f.icon;
             return (
               <motion.div
                 key={f.name}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, filter: "blur(12px)", y: 25 }}
+                whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                transition={{ duration: 0.6, delay: idx * 0.12 }}
                 className="bento-card rounded-2xl p-6 relative flex flex-col justify-between"
               >
                 <div>
@@ -131,12 +137,12 @@ export default function FoundersSection() {
           })}
         </div>
 
-        {/* Faculty Mentor Spotlight Card */}
+        {/* Faculty Mentor Spotlight Card with Blur-Fade */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, filter: "blur(14px)", y: 30 }}
+          whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.75 }}
           className="bento-card rounded-3xl p-8 sm:p-10 relative border-glow-indigo mb-20 overflow-hidden"
         >
           <div className="flex flex-col lg:flex-row items-center gap-8">
@@ -177,15 +183,27 @@ export default function FoundersSection() {
 
         {/* Specialized Squads Grid */}
         <div className="mt-12">
-          <div className="text-center mb-10">
+          <motion.div 
+            initial={{ opacity: 0, filter: "blur(10px)" }}
+            whileInView={{ opacity: 1, filter: "blur(0px)" }}
+            viewport={{ once: true }}
+            className="text-center mb-10"
+          >
             <h3 className="font-display text-2xl sm:text-4xl font-bold uppercase text-white">
               SPECIALIZED <span className="text-gradient-accent">ENGINEERING SQUADS</span>
             </h3>
-          </div>
+          </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {squads.map((sq, idx) => (
-              <div key={sq.title} className="bento-card rounded-2xl p-6 relative">
+              <motion.div
+                key={sq.title}
+                initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
+                whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                className="bento-card rounded-2xl p-6 relative"
+              >
                 <div className="flex justify-between items-start mb-3">
                   <h4 className="font-display text-lg font-bold text-white">
                     {sq.title}
@@ -206,7 +224,7 @@ export default function FoundersSection() {
                     </span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
