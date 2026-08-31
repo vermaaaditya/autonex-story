@@ -1,6 +1,8 @@
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown, Cpu, Sparkles, Terminal, ArrowUpRight } from 'lucide-react';
+import MeshDriftShader from './ui/MeshDriftShader';
+import HolographicBeams from './ui/BeamsBackground';
 
 export default function HeroSection({ onOpenJoin }) {
   const { scrollY } = useScroll();
@@ -12,14 +14,20 @@ export default function HeroSection({ onOpenJoin }) {
   const words = ["ZERO", "TO", "CIRCUIT"];
 
   return (
-    <section id="hero" className="relative min-h-[90vh] flex flex-col justify-center items-center px-4 overflow-hidden py-16 bg-grid-minimal">
+    <section id="hero" className="relative min-h-[92vh] flex flex-col justify-center items-center px-4 overflow-hidden py-16 bg-[#030305]">
       
-      {/* Ambient Gradient Glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-indigo-600/15 via-cyan-500/10 to-transparent blur-[140px] pointer-events-none rounded-full" />
+      {/* 1. Animated WebGL Mesh Drift Shader Background */}
+      <MeshDriftShader />
+
+      {/* 2. Holographic Light Beams Overlay */}
+      <HolographicBeams density={20} speed={1.2} opacity={45} className="opacity-50" />
+
+      {/* Ambient Gradient Spotlight */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-indigo-600/20 via-cyan-500/15 to-transparent blur-[140px] pointer-events-none rounded-full z-10" />
 
       <motion.div 
         style={{ y: textY, opacity }} 
-        className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 my-auto"
+        className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-20 my-auto"
       >
         
         {/* Left Column: Headline & Subtitle */}
@@ -30,21 +38,21 @@ export default function HeroSection({ onOpenJoin }) {
             initial={{ filter: "blur(8px)", opacity: 0, y: 15 }}
             animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.05] border border-white/10 text-cyan-400 font-mono-code text-xs w-fit mb-6 shadow-sm"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/15 text-cyan-400 font-mono-code text-xs w-fit mb-6 shadow-md backdrop-blur-md"
           >
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
             <span>1ST EVER ROBOTICS GUILD AT SIET PANCHKULA</span>
           </motion.div>
 
           {/* Staggered Blur-Fade Title */}
-          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-6 uppercase text-white">
+          <h1 className="font-display text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-[0.95] mb-6 uppercase text-white drop-shadow-lg">
             {words.map((word, idx) => (
               <motion.span
                 key={idx}
-                initial={{ filter: "blur(12px)", opacity: 0, y: 24 }}
+                initial={{ filter: "blur(14px)", opacity: 0, y: 24 }}
                 animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: idx * 0.12 }}
-                className={`inline-block mr-4 ${idx === 2 ? 'text-gradient-accent drop-shadow-[0_0_35px_rgba(99,102,241,0.4)]' : ''}`}
+                className={`inline-block mr-4 ${idx === 2 ? 'text-gradient-accent drop-shadow-[0_0_40px_rgba(99,102,241,0.5)]' : ''}`}
               >
                 {word}
               </motion.span>
@@ -56,7 +64,7 @@ export default function HeroSection({ onOpenJoin }) {
             initial={{ filter: "blur(8px)", opacity: 0, y: 15 }}
             animate={{ filter: "blur(0px)", opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.4 }}
-            className="text-zinc-400 text-base sm:text-lg max-w-xl leading-relaxed mb-8 font-sans font-medium"
+            className="text-zinc-300 text-base sm:text-lg max-w-xl leading-relaxed mb-8 font-sans font-medium drop-shadow-md"
           >
             The origin story of AUTONEX — building campus hardware culture from zero into a thriving 
             community of <strong className="text-white">Autonomous Robotics</strong>, <strong className="text-white">Industrial Automation</strong> & <strong className="text-white">Embedded Systems</strong>.
@@ -71,7 +79,7 @@ export default function HeroSection({ onOpenJoin }) {
           >
             <button
               onClick={onOpenJoin}
-              className="px-7 py-3.5 rounded-full bg-white text-black font-sans font-bold text-sm hover:bg-zinc-200 shadow-[0_0_25px_rgba(255,255,255,0.2)] hover:scale-105 transition-all flex items-center gap-2"
+              className="px-7 py-3.5 rounded-full bg-white text-black font-sans font-bold text-sm hover:bg-zinc-200 shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-105 transition-all flex items-center gap-2"
             >
               <span>Join AUTONEX</span>
               <ArrowUpRight className="w-4 h-4" />
@@ -79,7 +87,7 @@ export default function HeroSection({ onOpenJoin }) {
 
             <a
               href="#problem"
-              className="px-7 py-3.5 rounded-full bg-white/[0.05] border border-white/10 text-zinc-300 font-mono-code text-xs font-semibold hover:border-white/30 hover:text-white transition-colors"
+              className="px-7 py-3.5 rounded-full bg-white/[0.08] border border-white/20 text-zinc-200 font-mono-code text-xs font-semibold hover:border-white hover:text-white backdrop-blur-md transition-colors"
             >
               Explore Narrative ➔
             </a>
@@ -87,9 +95,9 @@ export default function HeroSection({ onOpenJoin }) {
 
         </div>
 
-        {/* Right Column: Sleek Bento Code Block */}
+        {/* Right Column: Bento Code Block */}
         <motion.div
-          initial={{ filter: "blur(12px)", opacity: 0, scale: 0.92 }}
+          initial={{ filter: "blur(14px)", opacity: 0, scale: 0.92 }}
           animate={{ filter: "blur(0px)", opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           className="lg:col-span-5 relative"
@@ -142,7 +150,7 @@ export default function HeroSection({ onOpenJoin }) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 6, 0] }}
         transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-        className="absolute bottom-6 flex flex-col items-center gap-1 font-mono-code text-xs text-zinc-500 hover:text-white transition-colors"
+        className="absolute bottom-6 flex flex-col items-center gap-1 font-mono-code text-xs text-zinc-400 hover:text-white transition-colors z-20"
       >
         <span>SCROLL DOWN</span>
         <ChevronDown className="w-4 h-4 text-indigo-400" />
