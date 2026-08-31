@@ -3,14 +3,14 @@
 
 :root {
   --bg-dark: #09021A;
-  --bg-[#0A0E27]: #0A0E27;
+  --bg-navy: #0A0E27;
   --cyan-accent: #00D4FF;
   --neon-green: #00FF88;
   --electric-orange: #FF5A1F;
   --gold-accent: #FFB800;
 
   --font-display: 'Orbitron', 'Space Grotesk', sans-serif;
-  --font-[#FF5A1F] font: 'Space Grotesk', 'Syne', sans-serif;
+  --font-headline: 'Space Grotesk', 'Syne', sans-serif;
   --font-mono: 'Space Mono', monospace;
   --font-body: 'Inter', sans-serif;
 }
@@ -32,7 +32,7 @@ body {
   font-family: var(--font-mono);
 }
 .font-headline {
-  font-family: var(--font-[#FF5A1F] font);
+  font-family: var(--font-headline);
 }
 
 /* Gradient Text Utilities */
