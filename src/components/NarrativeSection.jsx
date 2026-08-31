@@ -3,40 +3,40 @@ import { motion } from 'framer-motion';
 import { ShieldAlert, Lightbulb, Users, Trophy, Rocket, CheckCircle2, ArrowUpRight } from 'lucide-react';
 
 export default function NarrativeSection({ onOpenJoin }) {
-  const sectionsData = [
+  const narrativeChapters = [
     {
       id: 'problem',
       number: '01',
-      tag: 'THE ORIGIN',
+      tag: 'THE VOID',
       title: '0 CLUBS ➔ 1 MOVEMENT',
-      subtitle: 'The Void in Campus Hardware & Robotics',
-      content: 'When SIET Panchkula was established, students passionate about robotics faced a blank canvas: zero hardware clubs, zero automated control labs, and no platform to convert theoretical diagrams into intelligent machines.',
+      subtitle: 'The Campus Before AUTONEX',
+      content: 'When SIET Panchkula was established, students passionate about hardware faced a blank canvas: zero robotics clubs, zero automation labs, and no platform to build real physical machines.',
       stat: '0 CLUBS',
       statLabel: 'Hardware Culture Before AUTONEX',
       badgeColor: '#06B6D4',
-      accentText: 'Zero hardware labs. Zero robotics contests. Until we drew the first schematic.',
+      quote: 'Zero hardware labs. Zero robotics contests. Until we sketched the first schematic.',
       align: 'left',
       icon: ShieldAlert,
-      details: [
-        'No student access to microcontrollers or sensors',
+      bullets: [
+        'No student access to microcontrollers or actuators',
         'No faculty-mentored hardware projects',
-        'Isolated builders with no unifying team'
+        'Isolated builders with no team environment'
       ]
     },
     {
       id: 'spark',
       number: '02',
       tag: 'THE SPARK',
-      title: 'THE MIDNIGHT BLUEPRINT',
-      subtitle: '3 Engineers, 1 Uncompromising Vision',
-      content: 'Late one evening in a quiet hostel room, three student founders sketched the initial framework for AUTONEX. Supported by faculty mentors from the Automation & Robotics department, they set out to build SIET Panchkula’s first official robotics guild.',
-      stat: '3 DOMAINS',
-      statLabel: 'Autonomous, PLC & Embedded Systems',
+      title: 'THE MIDNIGHT IDEA',
+      subtitle: '4 Student Engineers & 1 Mentor',
+      content: 'Late one evening in a hostel room, 4 guys — Sandeep, Narinder, Anuj & Aaditya — decided to end the void. Supported by Dr. Milap Sharma (Assistant Professor, Dept of Automation & Robotics), they drafted the constitution for SIET Panchkula’s inaugural technical guild.',
+      stat: '4 GUYS',
+      statLabel: 'Founders Who Started The Guild',
       badgeColor: '#6366F1',
-      accentText: 'A blueprint born out of necessity to unite programmers, mechanics, and circuit designers.',
+      quote: 'A blueprint born out of necessity to unite programmers, mechanics, and circuit designers.',
       align: 'right',
       icon: Lightbulb,
-      details: [
+      bullets: [
         'Architected 3 core technical domains',
         'Secured faculty mentorship & departmental backing',
         'Drafted the official AUTONEX constitution'
@@ -46,16 +46,16 @@ export default function NarrativeSection({ onOpenJoin }) {
       id: 'build',
       number: '03',
       tag: 'THE BUILD',
-      title: '50+ FOUNDING MEMBERS',
-      subtitle: 'Assembling the Hardware Guild',
-      content: 'Word spread rapidly across lecture halls. Within three weeks of launch, over 50 enthusiastic engineers joined AUTONEX. We converted a dedicated lab space into an active hardware workshop — soldering boards, running ROS scripts, and wiring industrial PLCs.',
+      title: 'SETTING UP THE LABS',
+      subtitle: '50+ Members Joined in 21 Days',
+      content: 'Word spread rapidly across lecture halls. Within three weeks of launch, over 50 enthusiastic engineers joined AUTONEX. We converted a dedicated lab space into our active hardware workshop — soldering boards, running ROS scripts, and wiring PLCs.',
       stat: '50+ MEMBERS',
-      statLabel: 'Joined in the First 21 Days',
+      statLabel: 'Joined in First 3 Weeks',
       badgeColor: '#10B981',
-      accentText: 'From solo hobbyists to an organized technical powerhouse operating 7 days a week.',
+      quote: 'From solo hobbyists to an organized technical powerhouse operating 7 days a week.',
       align: 'left',
       icon: Users,
-      details: [
+      bullets: [
         'Established hands-on hardware workstations',
         'Formed dedicated domain leadership leads',
         'Procured ESP32, STM32 & PLC training kits'
@@ -64,17 +64,17 @@ export default function NarrativeSection({ onOpenJoin }) {
     {
       id: 'event',
       number: '04',
-      tag: 'THE EVENT',
+      tag: 'THE FIRST EVENT',
       title: 'ROBOWARS & HEAVY METAL',
       subtitle: '120+ Participants, 24 Robot Submissions',
-      content: 'We organized SIET Panchkula’s inaugural RoboWars & Industrial Automation Challenge. 120+ student competitors packed the main auditorium, showcasing custom line-following bots, pneumatic arms, and autonomous rovers.',
+      content: 'We organized SIET Panchkula’s inaugural RoboWars & Industrial Automation Challenge. 120+ student competitors packed the auditorium, showcasing custom line-following bots, pneumatic arms, and autonomous rovers.',
       stat: '24 BOTS',
-      statLabel: 'Submitted in First Hackathon',
+      statLabel: 'Submitted in Inaugural Contest',
       badgeColor: '#F59E0B',
-      accentText: 'The moment campus recognized that AUTONEX was not just a club, but a technology movement.',
+      quote: 'The moment campus recognized that AUTONEX was not just a club, but a technology movement.',
       align: 'right',
       icon: Rocket,
-      details: [
+      bullets: [
         'Inaugural campus-wide RoboWars arena',
         '120+ active student participants',
         'First prize awarded by Department Chairman'
@@ -83,17 +83,17 @@ export default function NarrativeSection({ onOpenJoin }) {
     {
       id: 'present',
       number: '05',
-      tag: 'THE STATUS',
-      title: '40+ BUILDERS & 9+ EVENTS',
+      tag: 'PRESENT DAY',
+      title: '40+ ACTIVE BUILDERS & 9+ EVENTS',
       subtitle: 'Pioneering & Thriving at SIET Panchkula',
-      content: 'Today, AUTONEX stands proudly as SIET Panchkula’s premiere robotics and automation guild. With 40+ active builders, 9+ major events held, and 3 specialized technical domains, we continue to engineer intelligent machines and inspire future hardware leaders.',
+      content: 'Today, AUTONEX stands as SIET Panchkula’s premiere robotics and automation guild. With 40+ active builders, 9+ major events held, and 3 specialized technical domains, we continue to engineer intelligent machines and inspire future hardware leaders.',
       stat: '9+ EVENTS',
-      statLabel: 'Workshops, Competitions & Contests',
+      statLabel: 'Workshops & National Contests',
       badgeColor: '#8B5CF6',
-      accentText: 'Operating online hardware labs, research initiatives, and national robotics delegations.',
+      quote: 'Operating hardware labs, research initiatives, and national robotics delegations.',
       align: 'left',
       icon: Trophy,
-      details: [
+      bullets: [
         '40+ Active student members & researchers',
         '9+ Major technical workshops & contests held',
         '1st Official club legacy built in SIET Panchkula'
@@ -102,75 +102,75 @@ export default function NarrativeSection({ onOpenJoin }) {
   ];
 
   return (
-    <div className="relative z-10 space-y-28 py-16">
-      {sectionsData.map((sec) => {
-        const IconComponent = sec.icon;
-        const isLeft = sec.align === 'left';
+    <div className="relative z-10 space-y-24 py-16">
+      {narrativeChapters.map((chap) => {
+        const IconComponent = chap.icon;
+        const isLeft = chap.align === 'left';
 
         return (
           <section
-            key={sec.id}
-            id={sec.id}
+            key={chap.id}
+            id={chap.id}
             className="min-h-[85vh] flex items-center justify-center px-4 relative scroll-mt-24"
           >
             <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
               
               {/* Text Block */}
               <motion.div
-                initial={{ filter: "blur(12px)", opacity: 0, y: 35 }}
-                whileInView={{ filter: "blur(0px)", opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
                 className={`lg:col-span-7 flex flex-col ${isLeft ? 'lg:order-1 text-left' : 'lg:order-2 text-left'}`}
               >
-                {/* Tag */}
+                {/* Chapter Tag */}
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="font-mono-code text-xs font-semibold px-2.5 py-1 rounded-md bg-white/[0.05] border border-white/10 text-cyan-400">
-                    {sec.number}
+                  <span className="font-mono-code text-xs font-semibold px-2.5 py-1 rounded bg-white/[0.05] border border-white/10 text-cyan-400">
+                    CHAPTER {chap.number}
                   </span>
                   <span className="font-mono-code text-xs tracking-widest uppercase font-semibold text-zinc-400">
-                    // {sec.tag}
+                    // {chap.tag}
                   </span>
                 </div>
 
                 {/* Main Title */}
                 <h2 className="font-display text-4xl sm:text-6xl font-black uppercase text-white tracking-tight leading-none mb-3">
-                  {sec.title}
+                  {chap.title}
                 </h2>
 
                 {/* Subtitle */}
                 <h3 className="font-sans text-base sm:text-lg text-indigo-400 font-bold mb-6">
-                  {sec.subtitle}
+                  {chap.subtitle}
                 </h3>
 
                 {/* Body Text */}
                 <p className="text-zinc-300 text-sm sm:text-base leading-relaxed mb-6 font-sans">
-                  {sec.content}
+                  {chap.content}
                 </p>
 
-                {/* Bullet Points */}
+                {/* Bullets */}
                 <div className="space-y-2.5 mb-8">
-                  {sec.details.map((item, dIdx) => (
-                    <div key={dIdx} className="flex items-center gap-2.5 text-xs sm:text-sm font-sans text-zinc-200">
+                  {chap.bullets.map((b, bIdx) => (
+                    <div key={bIdx} className="flex items-center gap-2.5 text-xs sm:text-sm font-sans text-zinc-200">
                       <CheckCircle2 className="w-4 h-4 shrink-0 text-cyan-400" />
-                      <span>{item}</span>
+                      <span>{b}</span>
                     </div>
                   ))}
                 </div>
 
                 {/* Quote Box */}
                 <div className="p-4 rounded-xl bg-white/[0.03] border-l-2 border-indigo-500 text-xs sm:text-sm font-mono-code text-zinc-400 italic">
-                  "{sec.accentText}"
+                  "{chap.quote}"
                 </div>
 
               </motion.div>
 
               {/* Bento Stat Card */}
               <motion.div
-                initial={{ filter: "blur(12px)", opacity: 0, scale: 0.9, y: 30 }}
-                whileInView={{ filter: "blur(0px)", opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, delay: 0.2 }}
+                initial={{ opacity: 0, scale: 0.9, y: 25 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.6, delay: 0.15 }}
                 className={`lg:col-span-5 ${isLeft ? 'lg:order-2' : 'lg:order-1'}`}
               >
                 <div className="bento-card rounded-2xl p-8 flex flex-col items-center text-center relative overflow-hidden">
@@ -182,20 +182,20 @@ export default function NarrativeSection({ onOpenJoin }) {
 
                   {/* Stat Number */}
                   <div className="font-display text-5xl sm:text-6xl font-black tracking-tight mb-2 uppercase text-white">
-                    {sec.stat}
+                    {chap.stat}
                   </div>
 
                   {/* Stat Label */}
                   <div className="font-mono-code text-xs text-zinc-400 font-semibold uppercase tracking-wider mb-6">
-                    {sec.statLabel}
+                    {chap.statLabel}
                   </div>
 
-                  {/* CTA */}
+                  {/* Action */}
                   <button
                     onClick={onOpenJoin}
                     className="px-5 py-2.5 rounded-full bg-white text-black font-sans font-bold text-xs flex items-center gap-1.5 hover:bg-zinc-200 transition-all"
                   >
-                    <span>Explore Stage</span>
+                    <span>Read More</span>
                     <ArrowUpRight className="w-4 h-4" />
                   </button>
                 </div>
